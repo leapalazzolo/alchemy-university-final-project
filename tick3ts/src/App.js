@@ -26,12 +26,12 @@ function App() {
   };
   useEffect(() => {
     const fetchData = async () => {
-      const events = await getEvents(filter.owner, filter.name);
+      let events = await getEvents(filter.owner, filter.name);
       const rate = await ethToUsd();
       if (userEventsIsSuccess && filter.assistant) {
         let array = [];
         userEvents.map((e) => array.push(e.toNumber()));
-        events.filter((d) => array.includes(d.id));
+        events = events.filter((d) => array.includes(d.id));
       }
       const chunkSize = 4;
       const eventsSplit = [];
@@ -41,8 +41,8 @@ function App() {
       setEventsSplit(eventsSplit);
       setRate(rate.USD);
     };
-    fetchData().catch(console.error);
-  }, [filter, userEventsIsSuccess, reloadEvents, userEvents]);
+    fetchData();
+  }, [filter, userEventsIsSuccess, reloadEvents]);
 
   const reset = () => {
     setFilter({});

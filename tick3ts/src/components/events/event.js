@@ -133,7 +133,6 @@ function Event({
       showSuccess();
     }
   }, [writeSuccess]);
-
   return (
     <Box
       maxW="md"
