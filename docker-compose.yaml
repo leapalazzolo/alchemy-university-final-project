@@ -1,0 +1,36 @@
+version: "3"
+
+networks:
+  dapp:
+    driver: bridge
+
+services:
+  backend:
+    container_name: backend
+    build:
+      context: ./backend
+    ports:
+      - "3001:3001"
+  node:
+    container_name: node
+    build:
+      context: ./contract
+    ports:
+      - "8545:8545"
+  bootstrap:
+    container_name: bootstrap
+    build:
+      context: ./contract
+    command: npx hardhat run scripts/bootstrap.js --network docker
+    depends_on:
+      - node
+  frontend:
+    container_name: frontend
+    depends_on:
+      - backend
+      - node
+    build:
+      context: ./tick3ts
+    ports:
+      - "3000:3000"
+    stdin_open: true

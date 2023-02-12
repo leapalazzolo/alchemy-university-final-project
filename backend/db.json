@@ -1,0 +1,26 @@
+{
+  "events": [
+    {
+      "id": 0,
+      "name": "bitcoin meetup #3",
+      "description": "If you're a bitcoiner you have to be here!",
+      "image": "https://www.infobae.com/new-resizer/Aq8oB5Hq2peP60LqxvfvlfVRc9c=/768x432/filters:format(webp):quality(85)/cloudfront-us-east-1.images.arcpublishing.com/infobae/VT4SSV4S7VCFDMVO22CRL47WCI.jpg",
+      "price": "0.5",
+      "timestamp": 1675574810,
+      "location": "Buenos Aires",
+      "owner": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "tags": ["bitcoin", "networking"]
+    },
+    {
+      "id": 1,
+      "name": "ethereum party",
+      "description": "Contracts, tokens and drinks",
+      "image": "https://www.esic.edu/sites/default/files/rethink/544d3ca8-moneda-ethereum.jpg",
+      "price": 0.1,
+      "timestamp": 1695174810,
+      "location": "Decentraland",
+      "owner": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92265",
+      "tags": ["ethereum", "workshop"]
+    }
+  ]
+}
